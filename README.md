@@ -13,6 +13,12 @@ Usage
 | connectionString | Datastorage connection string. |                                                                                |
 | dbName           | Datastorage database name.     |                                                                                |
 
+|  Parameter Name  | Description                    | Values                                      |
+|:----------------:|--------------------------------|---------------------------------------------|
+| dataProvider     | Hangfire datastorage.          | mongo,mysql,postgres,memorystorage          |
+|                  |                                | redis,litedb,sqlserver,azureservicebusqueue |
+| connectionString | Datastorage connection string. |                                             |
+| dbName           | Datastorage database name.     |                                             |
 
 dataProvider  Hangfire datastorage.
 
