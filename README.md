@@ -1,6 +1,6 @@
 # Hangfire Prometheus Exporter
 
-This is an exporter that exposes information Hangfire.
+This exporter that exposes information Hangfire.
 
 Usage
 ---
@@ -13,21 +13,13 @@ Usage
 | connectionString | Datastorage connection string. |                                             |
 | dbName           | Datastorage database name.     |                                             |
 
-dataProvider  Hangfire datastorage.
 
-   mongo,mysql,postgres,memorystorage,sqlserver,redis,azureservicebusqueue,litedb
-
-connectionString  Datastorage connection string.
-
-dbName  Datastorage database name.
-
-
-DataStorage MongoDB
+`DataStorage MongoDB`
 Parameter (dataProvider,connectionString,dbName)
 
 Sample
 
-```sh
+```docker
 docker run -d -p 5001:80 -e "dataProvider=mongo" -e "connectionString=mongodb://192.168.1.1:27017" -e "dbName=hangfire" --name myapp hangfireExporter
 ```
 
