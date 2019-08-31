@@ -20,12 +20,7 @@ namespace hangfireExporter.Controllers
             string dataProviderArg = Environment.GetEnvironmentVariable("dataProvider");
             string connStringArg = Environment.GetEnvironmentVariable("connectionString");
             string dbNameArg = Environment.GetEnvironmentVariable("dbName");
-            string dataIPArg = Environment.GetEnvironmentVariable("dataIP");
-
-            //dataProviderArg = "mongo";
-            //connStringArg = "mongodb://192.168.1.151:27017";
-            //dbNameArg = "hang";
-
+            
             switch (dataProviderArg)
             {
                 case "mongo":
@@ -35,7 +30,7 @@ namespace hangfireExporter.Controllers
                     HangfireConfigurationProvider.GetSqlServerConfiguration(connStringArg);
                     break;
                 case "redis":
-                    HangfireConfigurationProvider.GetRedisConfiguration(dataIPArg);
+                    HangfireConfigurationProvider.GetRedisConfiguration(connStringArg);
                     break;
                 case "azureservicebusqueue":
                     HangfireConfigurationProvider.GetAzureServiceBusQueueConfiguration(connStringArg);
