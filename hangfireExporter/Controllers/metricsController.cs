@@ -1,6 +1,6 @@
 ﻿using Hangfire;
-using Hangfire.Mongo;
 using Hangfire.Storage;
+using hangfireExporter.Providers;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Text;
@@ -17,15 +17,45 @@ namespace hangfireExporter.Controllers
 
         public metricsController()
         {
-            GlobalConfiguration.Configuration.UseMongoStorage("mongodb://192.168.1.151:27017", "hang", new MongoStorageOptions
+            string dataProviderArg = Environment.GetEnvironmentVariable("dataProvider");
+            string connStringArg = Environment.GetEnvironmentVariable("connectionString");
+            string dbNameArg = Environment.GetEnvironmentVariable("dbName");
+            string dataIPArg = Environment.GetEnvironmentVariable("dataIP");
+
+            //dataProviderArg = "mongo";
+            //connStringArg = "mongodb://192.168.1.151:27017";
+            //dbNameArg = "hang";
+
+            switch (dataProviderArg)
             {
-                Prefix = "custom",
-                MigrationOptions = new MongoMigrationOptions
-                {
-                    Strategy = MongoMigrationStrategy.Migrate,
-                    BackupStrategy = MongoBackupStrategy.Collections
-                }
-            });
+                case "mongo":
+                    HangfireConfigurationProvider.GetMongoConfiguration(connStringArg, dbNameArg);
+                    break;
+                case "sqlserver":
+                    HangfireConfigurationProvider.GetSqlServerConfiguration(connStringArg);
+                    break;
+                case "redis":
+                    HangfireConfigurationProvider.GetRedisConfiguration(dataIPArg);
+                    break;
+                case "azureservicebusqueue":
+                    HangfireConfigurationProvider.GetAzureServiceBusQueueConfiguration(connStringArg);
+                    break;
+                case "litedb":
+                    HangfireConfigurationProvider.GetLiteDBConfiguration(connStringArg);
+                    break;
+                case "memorystorage":
+                    HangfireConfigurationProvider.GetMemoryStorageConfiguration();
+                    break;
+                case "mysql":
+                    HangfireConfigurationProvider.GetMySqlConfiguration(connStringArg);
+                    break;
+                case "postgres":
+                    HangfireConfigurationProvider.GetPostgresConfiguration(connStringArg);
+                    break;
+                default:
+                    Console.WriteLine("Data Connection error. Please check connection string.");
+                    break;
+            }
 
             api = JobStorage.Current.GetMonitoringApi();
             api2 = JobStorage.Current.GetConnection();
@@ -34,8 +64,6 @@ namespace hangfireExporter.Controllers
 
         public string Get()
         {
-            string argumentsHolder = Environment.GetEnvironmentVariable("dbprovider");
-
             data.AppendLine("# Help Servers Count ");
             data.AppendLine("hangfire_servers_count " + api.Servers().Count);
             data.AppendLine("# Help Succeeded Jobs Count");
@@ -71,8 +99,6 @@ namespace hangfireExporter.Controllers
             GC.Collect();
 
             return data.ToString();
-
-
         }
     }
 }
