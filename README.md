@@ -15,6 +15,7 @@ Usage
 
 
 **`DataStorage MongoDB`**
+---
 
 Parameter (dataProvider,connectionString,dbName)
 
@@ -87,7 +88,7 @@ Sample
 docker run -d -p 5001:80 -e "dataProvider=mysql" -e "connectionString=server=192.168.1.1;uid=root;pwd=admin;database=hangfire;Allow User Variables=True" --name myapp hangfireExporter
 ```
 
-```txt
+
 **`DataStorage Postgres`**
 
 Parameter (dataProvider,connectionString)
@@ -96,5 +97,4 @@ Sample
 
 ```docker
 docker run -d -p 5001:80 -e "dataProvider=postgres" -e "connectionString=User ID = postgres; Password = password; Host = 192.168.1.1; Port = 5432; Database = hangfire;" --name myapp hangfireExporter
-```
 ```
