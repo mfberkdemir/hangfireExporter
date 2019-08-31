@@ -5,18 +5,11 @@ This is an exporter that exposes information Hangfire.
 Usage
 ---
 
-### Parameters
-
-| Parameter Name   | Description                    | Values                                                                         |
-|------------------|--------------------------------|--------------------------------------------------------------------------------|
-| dataProvider     | Hangfire datastorage.          | mongo,mysql,postgres,memorystorage,redis,litedb,sqlserver,azureservicebusqueue |
-| connectionString | Datastorage connection string. |                                                                                |
-| dbName           | Datastorage database name.     |                                                                                |
+### Parameters                                                                             
 
 |  Parameter Name  | Description                    | Values                                      |
-|:----------------:|--------------------------------|---------------------------------------------|
-| dataProvider     | Hangfire datastorage.          | mongo,mysql,postgres,memorystorage          |
-|                  |                                | redis,litedb,sqlserver,azureservicebusqueue |
+| ---------------- |--------------------------------|---------------------------------------------|
+| dataProvider     | Hangfire datastorage.          | mongo,mysql,postgres,memorystorage...       |
 | connectionString | Datastorage connection string. |                                             |
 | dbName           | Datastorage database name.     |                                             |
 
