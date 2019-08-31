@@ -2,9 +2,10 @@
 
 This is an exporter that exposes information Hangfire.
 
-## Usage
+Usage
+---
 
-Parameters
+###Parameters
 
 dataProvider  Hangfire datastorage.
 
