@@ -37,7 +37,7 @@ Parameter (dataProvider,connectionString)
 Sample
 
 ```docker
-docker run -d -p 5001:80 -e "dataProvider=sqlserver" -e "connectionString=Server=(localdb)\MSSQLLocalDB; database=hangfire; integrated security=True;" --name myapp hangfireExporter
+docker run -d -p 5001:80 -e "dataProvider=sqlserver" -e "connectionString=Server=(localdb)\MSSQLLocalDB; database=hangfire; integrated security=True;" --name myapp mfberkdemir/hangfireexporter
 ```
 ---
 #### DataStorage Redis(StackExchange)
@@ -48,7 +48,7 @@ Parameter (dataProvider,connectionString)
 Sample
 
 ```docker
-docker run -d -p 5001:80 -e "dataProvider=redis" -e "connectionString=192.168.1.1:6379" --name myapp hangfireExporter
+docker run -d -p 5001:80 -e "dataProvider=redis" -e "connectionString=192.168.1.1:6379" --name myapp mfberkdemir/hangfireexporter
 ```
 
 ---
@@ -60,7 +60,7 @@ Parameter (dataProvider,connectionString)
 Sample
 
 ```docker
-docker run -d -p 5001:80 -e "dataProvider=azureservicebusqueue" -e "connectionString=..." --name myapp hangfireExporter
+docker run -d -p 5001:80 -e "dataProvider=azureservicebusqueue" -e "connectionString=..." --name myapp mfberkdemir/hangfireexporter
 ```
 ---
 #### DataStorage LiteDB
@@ -71,7 +71,7 @@ Parameter (dataProvider,connectionString)
 Sample
 
 ```docker
-docker run -d -p 5001:80 -e "dataProvider=litedb" -e "connectionString=filePath" --name myapp hangfireExporter
+docker run -d -p 5001:80 -e "dataProvider=litedb" -e "connectionString=filePath" --name myapp mfberkdemir/hangfireexporter
 ```
 ---
 #### DataStorage Memory Storage
@@ -82,7 +82,7 @@ Parameter (dataProvider)
 Sample
 
 ```docker
-docker run -d -p 5001:80 -e "dataProvider=memorystorage" --name myapp hangfireExporter
+docker run -d -p 5001:80 -e "dataProvider=memorystorage" --name myapp mfberkdemir/hangfireexporter
 ```
 
 ---
@@ -94,7 +94,7 @@ Parameter (dataProvider,connectionString)
 Sample
 
 ```docker
-docker run -d -p 5001:80 -e "dataProvider=mysql" -e "connectionString=server=192.168.1.1;uid=root;pwd=admin;database=hangfire;Allow User Variables=True" --name myapp hangfireExporter
+docker run -d -p 5001:80 -e "dataProvider=mysql" -e "connectionString=server=192.168.1.1;uid=root;pwd=admin;database=hangfire;Allow User Variables=True" --name myapp mfberkdemir/hangfireexporter
 ```
 
 ---
@@ -106,5 +106,5 @@ Parameter (dataProvider,connectionString)
 Sample
 
 ```docker
-docker run -d -p 5001:80 -e "dataProvider=postgres" -e "connectionString=User ID = postgres; Password = password; Host = 192.168.1.1; Port = 5432; Database = hangfire;" --name myapp hangfireExporter
+docker run -d -p 5001:80 -e "dataProvider=postgres" -e "connectionString=User ID = postgres; Password = password; Host = 192.168.1.1; Port = 5432; Database = hangfire;" --name myapp mfberkdemir/hangfireexporter
 ```
