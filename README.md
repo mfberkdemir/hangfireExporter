@@ -7,9 +7,9 @@ Usage
 
 ### Parameters
 
-| Parameter name               | Description                    | Values                                                                                         |----------------------------  |------------------------------  |---------------------------------------------------------------------|
-| dataProvider                 | Hangfire datastorage.          | mongo,mysql,postgres,memorystorage,sqlserver,redis,azureservicebusqueue,litedb|                                                                                                                  
-| connectionString             | Datastorage connection string. |                                                 |                                | dbName                       | Datastorage database name.     |                                                 |
+| Parameter name               | Description                    | Values                            |                                                                                        | ---------------------------  | -----------------------------  | --------------------------------- |
+| dataProvider                 | Hangfire datastorage.          | mongo,mysql,postgres,memorystorage|                                                                                                                  
+| connectionString             | Datastorage connection string. |                                   |                                 | dbName                       | Datastorage database name.     |                                   |
 
 dataProvider  Hangfire datastorage.
 
