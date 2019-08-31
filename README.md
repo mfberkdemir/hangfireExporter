@@ -9,11 +9,12 @@ This exporter that exposes information Hangfire.
 
 |  Parameter Name  | Description                    | Values                                      |
 | ---------------- |--------------------------------|---------------------------------------------|
-| dataProvider     | Hangfire datastorage.          | mongo,mysql,postgres,memorystorage,redis,sqlserver,azureservicebusqueue,litedb       |
+| dataProvider     | Hangfire datastorage.          | mongo, mysql, postgres, memorystorage, redis, sqlserver, azureservicebusqueue, litedb       |
 | connectionString | Datastorage connection string. |                                             |
 | dbName           | Datastorage database name.     |                                             |
 
 
+----
 #### DataStorage MongoDB
 
 
