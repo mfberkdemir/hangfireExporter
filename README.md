@@ -25,7 +25,7 @@ Parameter (dataProvider,connectionString,dbName)
 Sample
 
 ```docker
-docker run -d -p 5001:80 -e "dataProvider=mongo" -e "connectionString=mongodb://192.168.1.1:27017" -e "dbName=hangfire" --name myapp hangfireExporter
+docker run -d -p 5001:80 -e "dataProvider=mongo" -e "connectionString=mongodb://192.168.1.1:27017" -e "dbName=hangfire" --name myapp mfberkdemir/hangfireexporter
 ```
 
 ---
