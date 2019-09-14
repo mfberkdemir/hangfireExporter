@@ -21,12 +21,6 @@ namespace hangfireExporter.Providers
         {
             GlobalConfiguration.Configuration.UseMongoStorage(connectionString, mongoDatabaseName, new MongoStorageOptions
             {
-                Prefix = "hangfire",
-                MigrationOptions = new MongoMigrationOptions
-                {
-                    Strategy = MongoMigrationStrategy.Migrate,
-                    BackupStrategy = MongoBackupStrategy.Collections
-                }
             });
         }
 
@@ -56,7 +50,6 @@ namespace hangfireExporter.Providers
             {
                 ConnectionString = azureConnectionString,
                 Configure = configureAction,
-                QueuePrefix = "hangfire-",
                 Queues = new[] { EnqueuedState.DefaultQueue },
                 CheckAndCreateQueues = false,
                 LoopReceiveTimeout = TimeSpan.FromMilliseconds(500)
@@ -85,8 +78,7 @@ namespace hangfireExporter.Providers
                 CountersAggregateInterval = TimeSpan.FromMinutes(5),
                 PrepareSchemaIfNecessary = true,
                 DashboardJobListLimit = 50000,
-                TransactionTimeout = TimeSpan.FromMinutes(1),
-                TablesPrefix = "hangfire"
+                TransactionTimeout = TimeSpan.FromMinutes(1)
             }));
         }
 
