@@ -1,6 +1,6 @@
 # Hangfire Prometheus Exporter
 
-This exporter that exposes information Hangfire.
+This exporter that exposes information Hangfire. [Türkçe açıklama.](https://mfberkdemir.github.io/posts/hangfire-exporter.html)
 
 [Simple Grafana Dashboard](https://grafana.com/grafana/dashboards/10928)
 
